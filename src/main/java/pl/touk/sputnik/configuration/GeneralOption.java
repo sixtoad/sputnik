@@ -83,6 +83,14 @@ public enum GeneralOption implements ConfigurationOption {
 
     DETEKT_ENABLED("detekt.enabled", "Detekt enabled", "false"),
     DETEKT_CONFIG_FILE("detekt.config.file", "Detekt configuration file location", null);
+    
+    CPD_ENABLED("cpd.enabled", "CPD enabled", "false"),
+    CPD_LEVEL_DUPLICATION("cpd.levelViolation", "Level of error to sent to Gerrit", "info"),
+    CPD_LANGUAGE("cpd.language", "Language to analyze", ""), 
+    CPD_MINIMUN_TILE_SIZE("cpd.minimunTokens", "The minimum token length which should be reported as a duplicate", "25"),
+    CPD_CHECK_ONLY_REVIEW_FILES("cpd.checkOnlyReviewFiles", "If search duplications only in review files, if is set to false, will check all files in project.", "true"),
+    CPD_EXCLUDE_DIRECTORY("cpd.excludeDirectories", "Exclude directories to compare, separated with ','", ""), 
+    CPD_INCLUDE_DIRECTORIES ("cpd.includeDirectories", "Include directories to compare with, separated with ','", "");
 
     private final String key;
     private final String description;
